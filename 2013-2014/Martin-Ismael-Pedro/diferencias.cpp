@@ -28,6 +28,12 @@ int main( int argc, char** argv )
 		cout <<  "Could not open or find the image" << std::endl ;
 		return -1;
 	}
+    namedWindow("IMAGEN1", CV_WINDOW_AUTOSIZE );//name of window
+    namedWindow("IMAGEN2", CV_WINDOW_AUTOSIZE );
+    imshow("IMAGEN1", image1);//show the window
+    cvMoveWindow( "IMAGEN1",  100,100  );
+    imshow("IMAGEN2", image2);
+    cvMoveWindow( "IMAGEN2", 700, 100 );
 
 	for(int i=0; i<image1.rows; i++)      //img1->height=img21->height
 	{
@@ -57,4 +63,5 @@ int main( int argc, char** argv )
 
 		}
 	}
+     cvDestroyAllWindows();
 }
